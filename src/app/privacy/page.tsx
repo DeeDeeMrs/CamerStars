@@ -23,7 +23,7 @@ const policySections = [
   {
     title: "3. How We Share Your Information",
     paragraphs: [
-      "The source policy says CamerStars does not sell personal data, but may share it with service providers that help operate the website (for example, hosting or payment processors) and with legal authorities when required by law or to protect rights. Website form details are also stored in the submissions service and emailed to CamerStars for review; uploaded application photos are not included in those emails.",
+      "The source policy says CamerStars does not sell personal data, but may share it with service providers that help operate the website (for example, hosting or payment processors) and with legal authorities when required by law or to protect rights.",
     ],
   },
   {
@@ -75,6 +75,11 @@ export default function PrivacyPage() {
             The following sections preserve the subjects and statements in the published CamerStars
             privacy policy. This content has not been legally reviewed or updated to confirm current
             data practices.
+          </p>
+          <p>
+            This website does not collect inquiries through forms. Contact buttons open WhatsApp,
+            an external messaging service; information you choose to share there is handled outside
+            this website. Review WhatsApp’s privacy information before sending personal details.
           </p>
           {policySections.map((section) => (
             <section className="privacy-section" key={section.title}>

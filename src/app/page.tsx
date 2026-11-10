@@ -15,7 +15,7 @@ import { HomeFeatureHero } from "@/components/home-feature-hero";
 import { HomeParallaxScene } from "@/components/home-parallax-scene";
 import { HomeReveal } from "@/components/home-reveal";
 import { StructuredData } from "@/components/structured-data";
-import { SubmissionForm } from "@/components/submission-form";
+import { WhatsAppLink } from "@/components/whatsapp-link";
 import { pageMetadata } from "@/lib/metadata";
 
 const faqItems = [
@@ -190,9 +190,12 @@ export default function Home() {
             <em>Your own way.</em>
           </h2>
           <p>Bring your personality. We’ll help you build the rest.</p>
-          <Link className="button button-primary" href="/apply-now">
-            Explore opportunities <ArrowUpRight aria-hidden="true" size={16} />
-          </Link>
+          <WhatsAppLink
+            className="button button-primary"
+            message="Hello, I would like to learn about opportunities at CamerStars."
+          >
+            Chat about opportunities <ArrowUpRight aria-hidden="true" size={16} />
+          </WhatsAppLink>
         </div>
         <span className="home-grand-parallax-caption">CamerStars · Talent &amp; opportunity</span>
       </HomeParallaxScene>
@@ -307,9 +310,12 @@ export default function Home() {
           <h2>Ready to take the <em>first step?</em></h2>
           <p>Explore the roles, then start a conversation with CamerStars.</p>
         </div>
-        <Link className="button button-light" href="/apply-now">
-          Explore opportunities <ArrowUpRight aria-hidden="true" size={16} />
-        </Link>
+        <WhatsAppLink
+          className="button button-light"
+          message="Hello, I would like to learn about opportunities at CamerStars."
+        >
+          Chat about opportunities <ArrowUpRight aria-hidden="true" size={16} />
+        </WhatsAppLink>
       </section>
 
       <section className="home-section home-contact">
@@ -317,9 +323,14 @@ export default function Home() {
           <div>
             <p className="eyebrow">Contact CamerStars</p>
             <h2>Let’s start with <em>a conversation.</em></h2>
-            <p>Reach the team on WhatsApp at +40 750 424 671 or leave a message here.</p>
+            <p>Have a question? Reach the team directly on WhatsApp at +40 750 424 671.</p>
           </div>
-          <SubmissionForm kind="contact" />
+          <WhatsAppLink
+            className="button button-primary"
+            message="Hello, I would like to contact CamerStars."
+          >
+            Chat on WhatsApp <ArrowUpRight aria-hidden="true" size={16} />
+          </WhatsAppLink>
         </HomeReveal>
       </section>
 

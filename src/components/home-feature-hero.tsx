@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Pause, Play } from "lucide-react";
+import { WhatsAppLink } from "@/components/whatsapp-link";
 import { useEffect, useState } from "react";
 
 const featuredImages = [
@@ -88,9 +89,12 @@ export function HomeFeatureHero() {
           Work from home or in a studio, build your confidence, and find the support to grow.
         </p>
         <div className="home-feature-actions">
-          <Link className="home-feature-cta" href="/apply-now">
-            Find your opportunity <ArrowUpRight aria-hidden="true" size={17} />
-          </Link>
+          <WhatsAppLink
+            className="home-feature-cta"
+            message="Hello, I would like to learn about opportunities at CamerStars."
+          >
+            Chat about opportunities <ArrowUpRight aria-hidden="true" size={17} />
+          </WhatsAppLink>
           <Link className="home-feature-link" href="/about-us">
             Get to know us
           </Link>

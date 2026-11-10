@@ -1,8 +1,8 @@
 import { Faq, type FaqItem } from "@/components/faq";
 import { Callout, PageIntro } from "@/components/page-intro";
 import { StructuredData } from "@/components/structured-data";
-import { SubmissionForm } from "@/components/submission-form";
 import { pageMetadata } from "@/lib/metadata";
+import { whatsappHref } from "@/lib/whatsapp";
 
 const franchiseFaq: FaqItem[] = [
   {
@@ -59,7 +59,7 @@ const franchiseFaq: FaqItem[] = [
 
 export const metadata = pageMetadata(
   "Webcam Studio Franchise & Partnership Details",
-  "Review the CamerStars webcam studio franchise proposal, listed support, published financial claims, due-diligence questions, and partnership enquiry form.",
+  "Review the CamerStars webcam studio franchise proposal, listed support, published financial claims, and due-diligence questions. Contact the team on WhatsApp.",
   "/partnership-application",
 );
 
@@ -115,20 +115,16 @@ export default function PartnershipApplicationPage() {
           <Faq items={franchiseFaq} />
         </div>
       </section>
-      <section className="form-page">
-        <div className="form-page-inner form-layout">
-          <aside className="form-aside">
-            <p className="eyebrow">Partner application</p>
-            <h2>Tell us what you’re planning.</h2>
-            <p>
-              The source form asks about professional and entrepreneurial experience, intended
-              city, investment amount in USD, and motivation for starting a videochat franchise.
-              Do not send sensitive financial documents.
-            </p>
-          </aside>
-          <SubmissionForm kind="partnership" />
-        </div>
-      </section>
+      <Callout
+        description="Message the CamerStars team on WhatsApp to discuss your plans. Please do not send sensitive financial documents in chat."
+        eyebrow="Studio partnership"
+        external
+        href={whatsappHref(
+          "Hello, I would like to discuss a CamerStars studio partnership.",
+        )}
+        label="Discuss on WhatsApp"
+        title="Tell us what you’re planning."
+      />
       <Callout
         description="For a general affiliate or studio discussion, the partnership overview is a good place to start."
         eyebrow="Explore further"

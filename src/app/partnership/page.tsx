@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Callout, PageIntro } from "@/components/page-intro";
+import { WhatsAppLink } from "@/components/whatsapp-link";
 import { pageMetadata } from "@/lib/metadata";
+import { whatsappHref } from "@/lib/whatsapp";
 
 export const metadata = pageMetadata(
   "Webcam Studio Affiliate & Business Partnership",
@@ -48,9 +50,9 @@ export default function PartnershipPage() {
                 Discuss a collaboration if you know a group of models interested in working with a
                 company or have an audience and recruitment channel suited to the opportunity.
               </p>
-              <Link href="/partnership-application">
+              <WhatsAppLink message="Hello, I would like to discuss an affiliate partnership with CamerStars.">
                 Discuss a partnership <ArrowUpRight aria-hidden="true" size={14} />
-              </Link>
+              </WhatsAppLink>
             </article>
             <article className="editorial-card">
               <span className="card-index">02 / STUDIO</span>
@@ -67,10 +69,11 @@ export default function PartnershipPage() {
         </div>
       </section>
       <Callout
-        description="Share your experience, intended city, indicative investment, and what you hope to build. Do not send sensitive financial documents."
+        description="Message the CamerStars team on WhatsApp to discuss affiliate or studio partnership opportunities."
         eyebrow="Start a conversation"
-        href="/partnership-application"
-        label="Partnership application"
+        external
+        href={whatsappHref("Hello, I would like to discuss a CamerStars partnership opportunity.")}
+        label="Chat on WhatsApp"
         title="Let’s talk about the opportunity."
       />
     </main>

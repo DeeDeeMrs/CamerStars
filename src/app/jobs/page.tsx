@@ -1,6 +1,7 @@
-import Link from "next/link";
 import { Callout, PageIntro } from "@/components/page-intro";
+import { WhatsAppLink } from "@/components/whatsapp-link";
 import { pageMetadata } from "@/lib/metadata";
+import { whatsappHref } from "@/lib/whatsapp";
 
 export const metadata = pageMetadata(
   "Webcam Model Jobs & Remote Careers",
@@ -91,9 +92,12 @@ export default function JobsPage() {
               <div>
                 <span className="card-index">0{index + 1} / {role.type}</span>
                 <h2>{role.title}</h2>
-                <Link className="button button-outline" href={`/apply-now?role=${encodeURIComponent(role.title)}`}>
-                  Apply for this role <span aria-hidden="true">↗</span>
-                </Link>
+                <WhatsAppLink
+                  className="button button-outline"
+                  message={`Hello, I am interested in the ${role.title} opportunity at CamerStars.`}
+                >
+                  Ask about this role <span aria-hidden="true">↗</span>
+                </WhatsAppLink>
               </div>
               <div>
                 <p>{role.description}</p>
@@ -106,10 +110,11 @@ export default function JobsPage() {
         </div>
       </section>
       <Callout
-        description="Start with the application form and tell us a little about yourself."
+        description="Message the CamerStars team on WhatsApp to ask about roles and next steps. All opportunities are for adults aged 18 and over."
         eyebrow="Next step"
-        href="/apply-now"
-        label="Start an application"
+        external
+        href={whatsappHref("Hello, I would like to discuss job opportunities at CamerStars.")}
+        label="Chat on WhatsApp"
         title="Ready to introduce yourself?"
       />
     </main>

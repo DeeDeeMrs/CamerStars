@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { AlertTriangle, ArrowUpRight } from "lucide-react";
 import { PageIntro } from "@/components/page-intro";
+import { WhatsAppLink } from "@/components/whatsapp-link";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = {
@@ -29,14 +29,12 @@ export default function OnboardingPage() {
               The previous form requested contact and address details, bank account information, a
               SWIFT or routing code,               and images of an ID plus a selfie. This page does not collect any of those items.
             </p>
-            <Link
+            <WhatsAppLink
               className="button button-primary"
-              href="https://wa.me/40750424671?text=Hello%2C%20I%20would%20like%20to%20ask%20about%20secure%20onboarding."
-              rel="noreferrer"
-              target="_blank"
+              message="Hello, I would like to ask about secure onboarding."
             >
               Ask CamerStars a question <ArrowUpRight aria-hidden="true" size={15} />
-            </Link>
+            </WhatsAppLink>
           </div>
         </div>
       </section>

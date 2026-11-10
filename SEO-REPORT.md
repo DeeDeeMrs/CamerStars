@@ -5,7 +5,7 @@
 - Preserved the current public route names; `/home` permanently redirects to `/`.
 - Added unique English-language titles, descriptions, canonical URLs, Open Graph metadata, and Twitter card metadata to each primary route.
 - Generated `/sitemap.xml` from the nine canonical routes.
-- Generated `/robots.txt`, disallowing only `/api/` and pointing to the sitemap.
+- Generated `/robots.txt`, allowing public pages and pointing to the sitemap.
 - Added Organization JSON-LD with only public identity and contact information present in the source.
 - Added FAQPage JSON-LD to homepage and franchise FAQ content.
 - Kept a single primary H1 per page, semantic landmarks, useful internal links, and descriptive alt text.
@@ -20,7 +20,7 @@
 | `/about-us` | About CamerStars | Training, support, arrangements, commission terms, privacy options |
 | `/work-from-home` | Work From Home as a Webcam Model | Work details, internet/equipment, privacy, verification, requirements |
 | `/jobs` | Webcam Model Jobs and Remote Roles | Model, creator, recruiter, streamer, and chatter roles |
-| `/apply-now` | Apply for a Webcam Model or Remote Role | Application details; no identity or banking collection |
+| `/apply-now` | Apply for a Webcam Model or Remote Role | WhatsApp contact for role discussions |
 | `/partnership` | Affiliate Webcam Studio Partnership | Affiliate and studio discussion |
 | `/onboarding-1` | CamerStars Onboarding Information | Prior onboarding fields and request for secure intake |
 | `/partnership-application` | Cam Studio Franchise and Partnership Application | Published franchise offer, support model, investment questions |
@@ -38,7 +38,6 @@
 1. Verify and approve business, pay, and investment claims and their calculation basis.
 2. Resolve the experience-figure conflict.
 3. Have the privacy policy, cookie behavior, data controller details, retention, and international processing reviewed for current practices and target jurisdictions.
-4. Configure and test Turnstile and Supabase secrets/storage separately for Preview and Production.
+4. Verify the WhatsApp contact number and test all WhatsApp buttons.
 5. Review the Unsplash license and image suitability for final commercial publication.
 6. Validate canonical host (`https://camerstars.com`), redirect behavior, structured data, and domain ownership after the production domain is connected.
-

@@ -69,12 +69,14 @@ export function Callout({
   description,
   href,
   label,
+  external = false,
 }: {
   eyebrow?: string;
   title: string;
   description: string;
   href: string;
   label: string;
+  external?: boolean;
 }) {
   return (
     <section className="callout">
@@ -83,9 +85,15 @@ export function Callout({
         <h2>{title}</h2>
         <p>{description}</p>
       </div>
-      <Link className="button button-light" href={href}>
-        {label} <span aria-hidden="true">↗</span>
-      </Link>
+      {external ? (
+        <a className="button button-light" href={href} rel="noopener noreferrer" target="_blank">
+          {label} <span aria-hidden="true">↗</span>
+        </a>
+      ) : (
+        <Link className="button button-light" href={href}>
+          {label} <span aria-hidden="true">↗</span>
+        </Link>
+      )}
     </section>
   );
 }
