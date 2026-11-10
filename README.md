@@ -67,11 +67,10 @@ The public form route is not operational until the required server secrets and T
 
 ## Deployment to Netlify
 
-1. Import this project into Netlify and use the default build command (`npm run build`).
-2. The repository includes `netlify.toml`, which installs the Next.js Netlify plugin and enables the app to serve its routes correctly.
-3. Set environment variables for Preview and Production separately, using matching Turnstile hostnames and `NEXT_PUBLIC_SITE_URL`.
-4. Deploy a Preview, test all pages and secure forms, then deploy Production after privacy, retention, access, and claim reviews are complete.
-5. Add `camerstars.com` and any `www` redirect in Netlify only after the owner has reviewed the deployment. DNS/GoDaddy settings are not changed by this project.
+1. Import this project into Netlify. The repository's `netlify.toml` sets `npm run build`, publishes Next.js output from `.next`, and enables the Netlify Next.js plugin.
+2. Set environment variables for Preview and Production separately, using matching Turnstile hostnames and `NEXT_PUBLIC_SITE_URL`.
+3. Deploy a Preview, test all pages and secure forms, then deploy Production after privacy, retention, access, and claim reviews are complete.
+4. Add `camerstars.com` and any `www` redirect in Netlify only after the owner has reviewed the deployment. DNS/GoDaddy settings are not changed by this project.
 
 The canonical site origin is currently set to `https://camerstars.com`. No deployment or DNS changes have been made.
 
