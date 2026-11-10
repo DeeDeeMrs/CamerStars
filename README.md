@@ -38,7 +38,7 @@ The site preserves the source paths:
 
 ## Secure submission setup
 
-Application, job, contact, and partnership forms use `POST /api/submissions`. The endpoint returns an explicit `503` until its security configuration is present and `SUBMISSIONS_ENABLED=true`; it does not pretend a submission succeeded. After securely storing a submission, it emails the form details to `dms.designart@gmail.com` through Resend. Applicant photos remain in private storage and are not emailed.
+Application, job, and partnership forms use `POST /api/submissions`. The homepage contact section links directly to the CamerStars WhatsApp number. The endpoint returns an explicit `503` until its security configuration is present and `SUBMISSIONS_ENABLED=true`; it does not pretend a submission succeeded. After securely storing a submission, it emails the form details to `dms.designart@gmail.com` through Resend. Applicant photos remain in private storage and are not emailed.
 
 1. Create a Supabase project and run [`supabase/schema.sql`](./supabase/schema.sql).
 2. Confirm that the `camerstars-private-applications` bucket is private. The SQL creates it as private, limits uploads to JPEG/PNG/WebP, and sets a 1 MB per-file limit. Do not add public bucket/object policies.
@@ -65,12 +65,13 @@ Application photos are limited to exactly two 1 MB JPEG/PNG/WebP images and stor
 
 The public form route is not operational until the required server secrets and Turnstile keys are configured. Never put Supabase service-role or Turnstile secret keys in `NEXT_PUBLIC_*` variables or browser code.
 
-## Deployment to Vercel
+## Deployment to Netlify
 
-1. Import this project into Vercel.
-2. Set environment variables for Preview and Production separately, using matching Turnstile hostnames and `NEXT_PUBLIC_SITE_URL`.
-3. Deploy a Preview, test all pages and secure forms, then deploy Production after privacy, retention, access, and claim reviews are complete.
-4. Add `camerstars.com` and any `www` redirect in Vercel only after the owner has reviewed the deployment. DNS/GoDaddy settings are not changed by this project.
+1. Import this project into Netlify and use the default build command (`npm run build`).
+2. The repository includes `netlify.toml`, which installs the Next.js Netlify plugin and enables the app to serve its routes correctly.
+3. Set environment variables for Preview and Production separately, using matching Turnstile hostnames and `NEXT_PUBLIC_SITE_URL`.
+4. Deploy a Preview, test all pages and secure forms, then deploy Production after privacy, retention, access, and claim reviews are complete.
+5. Add `camerstars.com` and any `www` redirect in Netlify only after the owner has reviewed the deployment. DNS/GoDaddy settings are not changed by this project.
 
 The canonical site origin is currently set to `https://camerstars.com`. No deployment or DNS changes have been made.
 
